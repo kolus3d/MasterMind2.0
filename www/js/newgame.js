@@ -146,7 +146,7 @@ function time() {
 
 
 function dragdrop() {
-    $(".ball").draggable({snap: ".singlebox"});
+    $(".ball").draggable({ snapMode: "inner", revert: "invalid"});
     $(".ball").position({at:"center"});
     $(".singlebox").droppable();
     
