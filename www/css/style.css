@@ -1,0 +1,208 @@
+body{
+    margin:0px !important;
+    padding:0px !important;
+    
+}
+
+#menu, #rules{
+    background: url('../img/Splash.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#options{
+    background: url('../img/optionsbg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#bestresults{
+    background: url('../img/bestbg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#rules{
+    background: url('../img/rulesbg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+
+.header{
+    border:0px;
+    opacity:0.8;
+    background-color: #69C2FD !important;
+    color:#000000 !important;
+    font-family:'Calibri';
+    font-size:110%;
+    font-weight:bold !important;
+}
+
+.footer{
+    display:block;
+    position:fixed;
+    bottom:0px; 
+    right:0px;
+    left:0px;
+    border:0px;
+    opacity:0.8;
+    background-color: #69C2FD !important;
+    color:#ffffff !important;
+    font-family:'Calibri';
+    font-size:120%;
+    font-weight:normal !important;
+}
+
+#forwardbtn{
+    display:block;
+    width:100px;
+    position:fixed;
+    bottom:10px;
+    left:50%;
+    right:50%;
+}
+
+.buttonscontainer{
+    
+    margin-top:10%;
+}
+
+.menubutton, .difficultybutton {
+    width:70% !important; 
+    color:#ffffff !important;
+    font-family:'Calibri';
+    font-size:120%;
+    font-weight:normal !important;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #1B3C5B !important;
+    opacity:0.85;
+}
+
+.menubutton:hover
+{
+    width:70% !important;
+    color:#000000 !important;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #69C2FD !important;
+}
+
+.difficultybuttonactive{
+    width:70% !important;
+    color:#000000 !important;
+    font-family:'Calibri';
+    font-size:120%;
+    font-weight:normal !important;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #69C2FD !important;
+    opacity:0.85;
+}
+
+
+.backbutton{
+    width:50px;
+    display: block !important;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #1B3C5B !important;
+    color:#ffffff !important;
+    font-family:'Calibri';
+    font-weight:normal !important;
+    }
+
+
+/*new game*/ 
+
+#newgamepage{
+    background: url('../img/gamebg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.singlerow{
+    display:block;
+}
+.singlebox{
+    display:block;
+    float:left;
+    background: url('../img/singlebox.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.singleboxscore{
+    margin:0px;
+    padding:0px;
+    border:0px;
+    display:block;
+    float:left;
+    background: url('../img/singleboxscore.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#newgamepage .ui-content{
+    margin:0 !important;
+    padding:0 !important;
+    border:0 !important;
+}
+
+#timer {
+    margin:0px;
+    padding:0px;
+    border:0px;
+    display:block;
+    float:left;
+    color: white;
+}
+
+#checkbutton {
+    margin:0px;
+    padding:0px;
+    border:0px;
+    display:block;
+    float:left;
+}
+
+#colorbasket{
+    margin:0px;
+    padding:0px;
+    border:0px;
+    display:block;
+    float:left;
+}
+
+#clock{
+    text-align:center;
+    font-size: 32px;
+    font-family: 'Calibri';
+}
+
+.singlecolorbox{
+    margin:0px;
+    padding:0px;
+    border:0px;
+    display:block;
+    float:left;
+}
+
+.singlecolorbox img{
+    display:block;
+    border:none;
+    margin:auto;
+    text-align:center;
+    width:80%;
+    height:80%;
+}
+
+.border{
+    margin:0px;
+    padding:0px;
+    border:0px;
+    display:block;
+    float:left;
+    background-color: blue;
+}
