@@ -52,7 +52,7 @@ function screenSize() {
     element.style.width = window.innerWidth + 'px';
     element.style.height = window.innerHeight * 0.1 + 'px';
     if (sessionStorage.getItem('numbercolors') === '4') {
-        element.innerHTML = '<div class="singlecolorbox"><img id="orange" draggable="true" class="ball" src="../www/img/orange.png"/></div><div class="singlecolorbox"><img draggable="true" class="ball" src="../www/img/blue.png"/></div><div class="singlecolorbox"><img draggable="true" class="ball" src="../www/img/red.png"/></div><div class="singlecolorbox"><img draggable="true" class="ball" src="../www/img/green.png"/></div>'
+        element.innerHTML = '<div class="singlecolorbox"><img id="orange" class="ball" src="../www/img/orange.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/blue.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/red.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/green.png"/></div>'
         el = document.getElementsByClassName("singlecolorbox");
         for (i = 0; i < el.length; i++) {
             element = el.item(i);
@@ -62,7 +62,7 @@ function screenSize() {
         ballSize();
     }
     if (sessionStorage.getItem('numbercolors') === '5') {
-        element.innerHTML = '<div class="singlecolorbox"><img id="orange" draggable="true" class="ball" src="../www/img/orange.png"/></div><div class="singlecolorbox"><img draggable="true" class="ball" src="../www/img/blue.png"/></div><div class="singlecolorbox"><img draggable="true" class="ball" src="../www/img/red.png"/></div><div class="singlecolorbox"><img draggable="true" class="ball" src="../www/img/green.png"/></div><div class="singlecolorbox"><img draggable="true" class="ball" src="../www/img/violet.png"/></div>'
+        element.innerHTML = '<div class="singlecolorbox"><img id="orange" class="ball" src="../www/img/orange.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/blue.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/red.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/green.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/violet.png"/></div>'
         el = document.getElementsByClassName("singlecolorbox");
         for (i = 0; i < el.length; i++) {
             element = el.item(i);
@@ -143,60 +143,11 @@ function time() {
     setTimeout("time();", 1000);
 }
 
-/*function catchBalls() {
-    orangeBall = document.getElementById("orange");
-    orangeBall.addEventListener(
-            'dragstart',
-            function (ev) {
-                ev.dataTransfer.setData("text/plain", ev.target.id);
-                console.log(ev.target.id);
-            }
-        )
-}
 
-function catchCheck() {
-    checkButton = document.getElementById("checkbutton");
-    checkButton.addEventListener(
-        'drop',
-        function (ev) {
-            ev.preventDefault();
-            console.log("drop");
-            var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-        }
-    )
-    checkButton.addEventListener(
-        'dragover',
-        function (ev) {
-            ev.preventDefault();}
-            )
-}
-
-
-
-function catchSingleBox() {
-    el = document.getElementsByClassName("singlebox");
-    for (i = 0; i < el.length; i++) {
-        el.item(i).addEventListener(
-        'drop',
-        function(ev) {
-            ev.preventDefault();
-            console.log("drop");
-            var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-        }
-    )
-        el.item(i).addEventListener(
-        'dragover',
-        function (ev) {
-            ev.preventDefault();}
-            )
-    }
-}*/
 
 function dragdrop() {
-    $(".singlecolorbox").draggable({snap: ".singlebox"});
-    $(".singlecolorbox").position({at:"center"});
+    $(".ball").draggable({snap: ".singlebox"});
+    $(".ball").position({at:"center"});
     $(".singlebox").droppable();
     
 }
