@@ -17,10 +17,6 @@ function randomColor(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function dziala() {
-    test = makeRandomColors();
-    alert(test);
-}
 
 function screenSize() {
     var i;
@@ -48,46 +44,24 @@ function screenSize() {
     element = document.getElementById('checkbutton');
     element.style.width = window.innerWidth * 0.5 + 'px';
     element.style.height = window.innerHeight * 0.1 + 'px';
-    element = document.getElementById('colorbasket');
-    element.style.width = window.innerWidth + 'px';
-    element.style.height = window.innerHeight * 0.1 + 'px';
-    if (sessionStorage.getItem('numbercolors') === '4') {
-        element.innerHTML = '<div class="singlecolorbox"><img id="orange" class="ball" src="../www/img/orange.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/blue.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/red.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/green.png"/></div>'
-        el = document.getElementsByClassName("singlecolorbox");
-        for (i = 0; i < el.length; i++) {
-            element = el.item(i);
-            element.style.width = window.innerWidth * 0.25 + 'px';
-            element.style.height = window.innerHeight * 0.1 + 'px';
-        }
-        ballSize();
+    
+    el = document.getElementsByClassName("popupmenua");
+    for (i = 0; i < el.length; i++) {
+        element = el.item(i);
+        element.style.width = window.innerWidth * 0.2 + 'px';
+        element.style.height = window.innerHeight * 0.1 + 'px';
     }
-    if (sessionStorage.getItem('numbercolors') === '5') {
-        element.innerHTML = '<div class="singlecolorbox"><img id="orange" class="ball" src="../www/img/orange.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/blue.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/red.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/green.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/violet.png"/></div>'
-        el = document.getElementsByClassName("singlecolorbox");
-        for (i = 0; i < el.length; i++) {
-            element = el.item(i);
-            element.style.width = window.innerWidth * 0.2 + 'px';
-            element.style.height = window.innerHeight * 0.1 + 'px';
-        }
-        ballSize();
+    el = document.getElementsByClassName("popupimg");
+    for (i = 0; i < el.length; i++) {
+        element = el.item(i);
+        element.style.width = window.innerWidth * 0.2 + 'px';
+        element.style.height = window.innerHeight * 0.1 + 'px';
     }
-    if (sessionStorage.getItem('numbercolors') === '6') {
-        element.innerHTML = '<div class="border"></div><div class="singlecolorbox"><img id="orange" class="ball" src="../www/img/orange.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/blue.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/red.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/green.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/violet.png"/></div><div class="singlecolorbox"><img class="ball" src="../www/img/yellow.png"/></div><div class="border"></div>'
-        el = document.getElementsByClassName("singlecolorbox");
-        for (i = 0; i < el.length; i++) {
-            element = el.item(i);
-            element.style.width = window.innerWidth * 0.16 + 'px';
-            element.style.height = window.innerHeight * 0.1 + 'px';
-        }
-        el = document.getElementsByClassName("border");
-        for (i = 0; i < el.length; i++) {
-            element = el.item(i);
-            element.style.width = window.innerWidth * 0.02 + 'px';
-            element.style.height = window.innerHeight * 0.1 + 'px';
-        }
-        ballSize();
-        
-    }
+
+    //if (sessionStorage.getItem('numbercolors') === '4') {
+      //  element.innerHTML = '<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a"><img id="orange" class="ball" src="../www/img/singlebox.png" /></a><div data-role="popup" id="popupMenu" data-theme="b"><ul data-role="listview" data-inset="true" style="min-width:210px;"><li data-role="list-divider">KOLOR 1</li><li><a href="#"><img id="orange" class="ball" src="../www/img/orange.png" /></a></li><li><a href="#"><img id="blue" class="ball" src="../www/img/blue.png" /></a></li><li><a href="#"><img id="red" class="ball" src="../www/img/red.png" /></a></li><li><a href="#"><img id="green" class="ball" src="../www/img/green.png" /></a></li></ul></div>'     
+    //}
+    
 }
 
 function ballSize() {
@@ -145,12 +119,7 @@ function time() {
 
 
 
-function dragdrop() {
-    $(".ball").draggable({ snapMode: "inner", revert: "invalid"});
-    $(".ball").position({at:"center"});
-    $(".singlebox").droppable();
-    
-}
+
 
 
 
@@ -164,6 +133,6 @@ function initGame() {
     //catchCheck();
     //catchBalls();
     round = 0;
-    dragdrop();
+    
     //catchSingleBox();
 }
