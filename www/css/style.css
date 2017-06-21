@@ -123,9 +123,7 @@ body{
     background-repeat: no-repeat;
 }
 
-.singlerow{
-    display:block;
-}
+
 .singlebox  {
     display:block;
     float:left;
@@ -139,6 +137,9 @@ body{
     padding:0px;
 }
 
+.notactive{
+    display:none !important;
+}
 
 .singleboxscore{
     margin:0px;
@@ -213,3 +214,5 @@ body{
     float:left;
     background-color: blue;
 }
+
+

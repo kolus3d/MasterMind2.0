@@ -19,3 +19,5 @@ var config = {
         sessionStorage.setItem('time', this._time);
     }    
 }
+
+var round =0;

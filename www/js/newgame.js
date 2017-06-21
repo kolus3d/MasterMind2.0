@@ -3,8 +3,6 @@ window.addEventListener("load", function () {
     buttonNewGame.addEventListener("click", initGame);
 });
 
-
-
 function randomColor(min, max) {
     var min = parseInt(min, 10);
     var max = parseInt(max, 10);
@@ -56,12 +54,7 @@ function screenSize() {
         element = el.item(i);
         element.style.width = window.innerWidth * 0.2 + 'px';
         element.style.height = window.innerHeight * 0.1 + 'px';
-    }
-
-    //if (sessionStorage.getItem('numbercolors') === '4') {
-      //  element.innerHTML = '<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a"><img id="orange" class="ball" src="../www/img/singlebox.png" /></a><div data-role="popup" id="popupMenu" data-theme="b"><ul data-role="listview" data-inset="true" style="min-width:210px;"><li data-role="list-divider">KOLOR 1</li><li><a href="#"><img id="orange" class="ball" src="../www/img/orange.png" /></a></li><li><a href="#"><img id="blue" class="ball" src="../www/img/blue.png" /></a></li><li><a href="#"><img id="red" class="ball" src="../www/img/red.png" /></a></li><li><a href="#"><img id="green" class="ball" src="../www/img/green.png" /></a></li></ul></div>'     
-    //}
-    
+    }   
 }
 
 function ballSize() {
@@ -118,21 +111,90 @@ function time() {
 }
 
 
-
+function checkDifficultyLevel() {
+    var i, el, element;
+    var y = sessionStorage.getItem('numbercolors');
+    switch (y) {
+        case '4':
+            el = document.getElementsByClassName("violetli");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.className += " notactive";
+            }
+            el = document.getElementsByClassName("yellowli");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.className += " notactive";
+            }
+            break;
+        case '5':
+            el = document.getElementsByClassName("violetli");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.classList.remove("notactive");
+            }
+            el = document.getElementsByClassName("yellowli");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.className += " notactive";
+            }
+            break;
+        case '6':
+            el = document.getElementsByClassName("violetli");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.classList.remove("notactive");
+            }
+            el = document.getElementsByClassName("yellowli");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.classList.remove("notactive");
+            }
+            break;
+    }
+}
 
 
 
 
 function initGame() {
-    
+    round = 1;
     makeRandomColors();
     screenSize();
     sec = getTime();
     time();
+    checkDifficultyLevel();
+}
 
-    //catchCheck();
-    //catchBalls();
-    round = 0;
-    
-    //catchSingleBox();
+function newRound() {
+    round = round + 1;
+    var el, element;
+    switch (round) {
+        case 2:
+            el = document.getElementsByClassName("row2");
+            break;
+        case 3:
+            el = document.getElementsByClassName("row3");
+            break;
+        case 4:
+            el = document.getElementsByClassName("row4");
+            break;
+        case 5:
+            el = document.getElementsByClassName("row5");
+            break;
+        case 6:
+            el = document.getElementsByClassName("row6");
+            break;
+        case 7:
+            el = document.getElementsByClassName("row7");
+            break;
+        case 8:
+            el = document.getElementsByClassName("row8");
+            break;
+    }
+    for (i = 0; i < el.length; i++) {
+        element = el.item(i);
+        element.classList.remove("notactive");
+    }
+        
 }
