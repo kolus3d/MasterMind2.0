@@ -108,6 +108,11 @@ function time() {
         elClock.textContent = '00 : 0' + sec;
     sec = sec - 1;
     setTimeout("time();", 1000);
+    if (sec === 0) {
+        clearTimeout();
+        newRound();
+        return;
+    }
 }
 
 
@@ -196,5 +201,6 @@ function newRound() {
         element = el.item(i);
         element.classList.remove("notactive");
     }
-        
+    sec = getTime();
+    time();        
 }
