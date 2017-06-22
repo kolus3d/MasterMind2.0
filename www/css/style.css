@@ -127,7 +127,55 @@ body{
 .singlebox  {
     display:block;
     float:left;
-    background: url('../img/singlebox.png');
+    background: url('../img/singleboxnotactive.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.empty{
+    background: url('../img/singleboxactive.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.toolate{
+    background: url('../img/singleboxtoolate.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.orange{
+    background: url('../img/orange.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.blue{
+    background: url('../img/blue.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.red{
+    background: url('../img/red.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.green{
+    background: url('../img/green.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.violet{
+    background: url('../img/violet.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.yellow{
+    background: url('../img/yellow.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -135,6 +183,10 @@ body{
 .popupmenua{
     margin:0px;
     padding:0px;
+}
+
+.deactivation{
+    pointer-events:none;
 }
 
 .notactive{

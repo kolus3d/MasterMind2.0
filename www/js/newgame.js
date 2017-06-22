@@ -107,9 +107,9 @@ function time() {
     else
         elClock.textContent = '00 : 0' + sec;
     sec = sec - 1;
-    setTimeout("time();", 1000);
-    if (sec === 0) {
-        clearTimeout();
+    temporaryTime = setTimeout("time();", 1000);
+    if (sec === -2) {
+        clearTimeout(temporaryTime);
         newRound();
         return;
     }
@@ -164,6 +164,10 @@ function checkDifficultyLevel() {
 
 function initGame() {
     round = 1;
+    position1 = 0;
+    position2 = 0;
+    position3 = 0;
+    position4 = 0;
     makeRandomColors();
     screenSize();
     sec = getTime();
@@ -172,35 +176,71 @@ function initGame() {
 }
 
 function newRound() {
+
+    function addNotactive(){
+        for (i = 0; i < el.length; i++) {
+            element = el.item(i);
+            element.classList.remove("notactive");
+        }
+    }
+    function addDeactivation() {
+        for (i = 0; i < el.length; i++) {
+            element = el.item(i);
+            element.className += " deactivation";
+        }
+    }
+
     round = round + 1;
     var el, element;
     switch (round) {
         case 2:
             el = document.getElementsByClassName("row2");
+            addNotactive();
+            el = document.getElementsByClassName("row1");
+            addDeactivation();
             break;
         case 3:
             el = document.getElementsByClassName("row3");
+            addNotactive();
+            el = document.getElementsByClassName("row2");
+            addDeactivation();
             break;
         case 4:
             el = document.getElementsByClassName("row4");
+            addNotactive();
+            el = document.getElementsByClassName("row3");
+            addDeactivation();
             break;
         case 5:
             el = document.getElementsByClassName("row5");
+            addNotactive();
+            el = document.getElementsByClassName("row4");
+            addDeactivation();
             break;
         case 6:
             el = document.getElementsByClassName("row6");
+            addNotactive();
+            el = document.getElementsByClassName("row5");
+            addDeactivation();
             break;
         case 7:
             el = document.getElementsByClassName("row7");
+            addNotactive();
+            el = document.getElementsByClassName("row6");
+            addDeactivation();
             break;
         case 8:
             el = document.getElementsByClassName("row8");
+            addNotactive();
+            el = document.getElementsByClassName("row7");
+            addDeactivation();
+            break;
+        case 9:
+            el = document.getElementsByClassName("row8");
+            addDeactivation();
             break;
     }
-    for (i = 0; i < el.length; i++) {
-        element = el.item(i);
-        element.classList.remove("notactive");
-    }
+
     sec = getTime();
     time();        
 }
