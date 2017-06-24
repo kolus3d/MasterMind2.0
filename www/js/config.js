@@ -22,3 +22,4 @@ var config = {
 
 var round = 0;
 var temporaryTime;
+var position1, position2, position3, position4;

@@ -1,8 +1,10 @@
 window.addEventListener("load", function () {
     buttonNewGame = document.getElementById("newgame");
     buttonNewGame.addEventListener("click", initGame);
-    orangeColorBtn = document.getElementById("orange1");
-    orangeColorBtn.addEventListener("click", pickOrange);
+    orangeColorBtn11 = document.getElementById("orange11");
+    orangeColorBtn11.addEventListener("click", function () { pickOrange(1); }, false);;
+    orangeColorBtn12 = document.getElementById("orange12");
+    orangeColorBtn12.addEventListener("click", function () { pickOrange(2); }, false);;
 });
 
 function randomColor(min, max) {
@@ -179,19 +181,6 @@ function checkDifficultyLevel() {
 }
 
 
-function pickOrange() {
-    alert('dziala');
-    //var i, el, element;
-    //el = document.getElementsByClassName("imgrow1");
-    //for (i = 0; i < el.length; i++) {
-    //    element = el.item(i);
-    //    element.classList.remove("empty");
-     //   element.className += " orange";
-    //}
-    
-}
-
-
 function initGame() {
     round = 1;
     position1 = 0;
@@ -315,4 +304,31 @@ function newRound() {
 
     sec = getTime();
     time();        
+}
+
+
+function pickOrange(slotNumber) {
+    switch (slotNumber) {
+        case 1:
+            position1 = 1;
+            break;
+        case 2:
+            position2 = 1;
+            break;
+        case 3:
+            position3 = 1;
+            break;
+        case 4:
+            position4 = 1;
+            break;
+    }
+    var temp1, temp4, temp2, temp3;
+    temp1 = 'imgrow' + round;
+    temp4 = 'box' + slotNumber;
+    temp2 = document.getElementsByClassName(temp1 + ' ' + temp4);
+    for (i = 0; i < temp2.length; i++) {
+        temp3 = temp2.item(i);
+        temp3.classList.remove("empty");
+        temp3.className += " orange";
+    }  
 }
