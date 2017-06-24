@@ -1,6 +1,8 @@
 window.addEventListener("load", function () {
     buttonNewGame = document.getElementById("newgame");
     buttonNewGame.addEventListener("click", initGame);
+    orangeColorBtn = document.getElementById("orange1");
+    orangeColorBtn.addEventListener("click", pickOrange);
 });
 
 function randomColor(min, max) {
@@ -56,12 +58,22 @@ function screenSize() {
         element.style.height = window.innerHeight * 0.1 + 'px';
     }
     el = document.getElementsByClassName("ulpossition");
+    var y = sessionStorage.getItem('numbercolors');
     for (i = 0; i < el.length; i++) {
         element = el.item(i);
-        element.style.left = (window.innerWidth - 125)/2 + 'px';
-        element.style.top = (window.innerHeight-5*75)/2 + 'px';
+        element.style.left = (window.innerWidth - 125) / 2 + 'px';
+        switch (y) {
+            case '4':
+                element.style.top = (window.innerHeight - 4 * 75) / 2 + 'px';
+                break;
+            case '5':
+                element.style.top = (window.innerHeight - 5 * 75) / 2 + 'px';
+                break;
+            case '6':
+                element.style.top = (window.innerHeight-6*75)/2 + 'px';        
+                break;  
+                }
     }
-    
 }
 
 function ballSize() {
