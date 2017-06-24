@@ -20,4 +20,5 @@ var config = {
     }    
 }
 
-var round =0;
+var round = 0;
+var temporaryTime;
