@@ -54,7 +54,14 @@ function screenSize() {
         element = el.item(i);
         element.style.width = window.innerWidth * 0.2 + 'px';
         element.style.height = window.innerHeight * 0.1 + 'px';
-    }   
+    }
+    el = document.getElementsByClassName("ulpossition");
+    for (i = 0; i < el.length; i++) {
+        element = el.item(i);
+        element.style.left = (window.innerWidth - 125)/2 + 'px';
+        element.style.top = (window.innerHeight-5*75)/2 + 'px';
+    }
+    
 }
 
 function ballSize() {
@@ -189,12 +196,13 @@ function initGame() {
 
 function newRound() {
 
-    function removeNotactive(){
+    function removeNotActive(){
         for (i = 0; i < el.length; i++) {
             element = el.item(i);
             element.classList.remove("notactive");
         }
-    }
+    }    
+    
     function addDeactivation() {
         for (i = 0; i < el.length; i++) {
             element = el.item(i);
@@ -207,49 +215,89 @@ function newRound() {
     switch (round) {
         case 2:
             el = document.getElementsByClassName("row2");
-            removeNotactive();
+            removeNotActive();
             el = document.getElementsByClassName("row1");
             addDeactivation();
+            el = document.getElementsByClassName("navrow1");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.classList.remove("fakehover");
+            }
             break;
         case 3:
             el = document.getElementsByClassName("row3");
-            removeNotactive();
+            removeNotActive();
             el = document.getElementsByClassName("row2");
             addDeactivation();
+            el = document.getElementsByClassName("navrow2");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.classList.remove("fakehover");
+            }
             break;
         case 4:
             el = document.getElementsByClassName("row4");
-            removeNotactive();
+            removeNotActive();
             el = document.getElementsByClassName("row3");
             addDeactivation();
+            el = document.getElementsByClassName("navrow3");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.classList.remove("fakehover");
+            }
             break;
         case 5:
             el = document.getElementsByClassName("row5");
-            removeNotactive();
+            removeNotActive();
             el = document.getElementsByClassName("row4");
             addDeactivation();
+            el = document.getElementsByClassName("navrow4");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.classList.remove("fakehover");
+            }
             break;
         case 6:
             el = document.getElementsByClassName("row6");
-            removeNotactive();
+            removeNotActive();
             el = document.getElementsByClassName("row5");
             addDeactivation();
+            el = document.getElementsByClassName("navrow5");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.classList.remove("fakehover");
+            }
             break;
         case 7:
             el = document.getElementsByClassName("row7");
-            removeNotactive();
+            removeNotActive();
             el = document.getElementsByClassName("row6");
             addDeactivation();
+            el = document.getElementsByClassName("navrow6");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.classList.remove("fakehover");
+            }
             break;
         case 8:
             el = document.getElementsByClassName("row8");
-            removeNotactive();
+            removeNotActive();
             el = document.getElementsByClassName("row7");
             addDeactivation();
+            el = document.getElementsByClassName("navrow7");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.classList.remove("fakehover");
+            }
             break;
         case 9:
             el = document.getElementsByClassName("row8");
             addDeactivation();
+            el = document.getElementsByClassName("navrow8");
+            for (i = 0; i < el.length; i++) {
+                element = el.item(i);
+                element.classList.remove("fakehover");
+            }
             break;
     }
 
