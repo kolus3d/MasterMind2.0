@@ -1,6 +1,8 @@
 window.addEventListener("load", function () {
     buttonNewGame = document.getElementById("newgame");
     buttonNewGame.addEventListener("click", initGame);
+    checkBtn = document.getElementById("checkbtn");
+    checkBtn.addEventListener("click", newRound);
     //zaczepy do pomaranczowych kulek
     orangeColorBtn11 = document.getElementById("orange11");
     orangeColorBtn11.addEventListener("click", function () { pickOrange(1); }, false);;
@@ -471,9 +473,12 @@ function screenSize() {
     element = document.getElementById('timer');
     element.style.width = window.innerWidth * 0.5 + 'px';
     element.style.height = window.innerHeight * 0.1 + 'px';
-    element = document.getElementById('checkbutton');
+    element = document.getElementById('checkbuttonbox');
     element.style.width = window.innerWidth * 0.5 + 'px';
     element.style.height = window.innerHeight * 0.1 + 'px';
+    //element = document.getElementById('checkbtn');
+    //element.style.width = window.innerWidth * 0.3 + 'px';
+    //element.style.height = window.innerHeight * 0.05 + 'px';
     
     el = document.getElementsByClassName("popupmenua");
     for (i = 0; i < el.length; i++) {
@@ -549,7 +554,6 @@ function time() {
     sec = sec - 1;
     temporaryTime = setTimeout("time();", 1000);
     if (sec === -2) {
-        clearTimeout(temporaryTime);
         newRound();
         return;
     }
@@ -615,6 +619,7 @@ function initGame() {
 }
 
 function newRound() {
+    clearTimeout(temporaryTime);
     round = round + 1;
     position1 = 0;
     position2 = 0;
