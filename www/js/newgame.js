@@ -489,36 +489,24 @@ function screenSize() {
     }
     
     el = document.getElementsByClassName("ulpossition");
-        var y = sessionStorage.getItem('numbercolors');
+    var y = sessionStorage.getItem('numbercolors');
         for (i = 0; i < el.length; i++) {
             element = el.item(i);
-            element.style.left = (window.innerWidth - 125) / 2 + 'px';
+            element.style.top = window.innerHeight - 70 + 'px';
             switch (y) {
                 case '4':
-                    element.style.top = (window.innerHeight - 4 * 75) / 2 + 'px';
+                    element.style.left = (window.innerWidth - 200) / 2 + 'px';
                     break;
                 case '5':
-                    element.style.top = (window.innerHeight - 5 * 75) / 2 + 'px';
+                    element.style.left = (window.innerWidth - 250) / 2 + 'px';
                     break;
                 case '6':
-                    element.style.top = (window.innerHeight - 6 * 75) / 2 + 'px';
+                    element.style.left = (window.innerWidth - 300) / 2 + 'px';
                     break;
             }
         }
-    
-    
 }
 
-function ballSize() {
-    el = document.getElementsByClassName("ball");
-    for (i = 0; i < el.length; i++) {
-        element = el.item(i);
-        element.style.width = window.innerHeight * 0.08 + 'px';
-        element.style.height = window.innerHeight * 0.08 + 'px';
-        element.style.marginTop = window.innerHeight * 0.01 + 'px';
-        element.style.marginBottom = window.innerHeight * 0.01 + 'px';
-    }
-}
 
 function makeRandomColors() {
     var availableColors = [1, 2, 3, 4, 5, 6];
