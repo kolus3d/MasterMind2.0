@@ -5,6 +5,10 @@ window.addEventListener("load", function () {
     orangeColorBtn11.addEventListener("click", function () { pickOrange(1); }, false);;
     orangeColorBtn12 = document.getElementById("orange12");
     orangeColorBtn12.addEventListener("click", function () { pickOrange(2); }, false);;
+    orangeColorBtn13 = document.getElementById("orange13");
+    orangeColorBtn13.addEventListener("click", function () { pickOrange(3); }, false);;
+    orangeColorBtn14 = document.getElementById("orange14");
+    orangeColorBtn14.addEventListener("click", function () { pickOrange(4); }, false);;
 });
 
 function randomColor(min, max) {
@@ -196,7 +200,11 @@ function initGame() {
 }
 
 function newRound() {
-
+    round = round + 1;
+    position1 = 0;
+    position2 = 0;
+    position3 = 0;
+    position4 = 0;
     function removeNotActive(){
         for (i = 0; i < el.length; i++) {
             element = el.item(i);
@@ -211,7 +219,6 @@ function newRound() {
         }
     }
 
-    round = round + 1;
     var el, element;
     switch (round) {
         case 2:
@@ -308,27 +315,279 @@ function newRound() {
 
 
 function pickOrange(slotNumber) {
-    switch (slotNumber) {
-        case 1:
-            position1 = 1;
-            break;
-        case 2:
-            position2 = 1;
-            break;
-        case 3:
-            position3 = 1;
-            break;
-        case 4:
-            position4 = 1;
-            break;
-    }
     var temp1, temp4, temp2, temp3;
     temp1 = 'imgrow' + round;
     temp4 = 'box' + slotNumber;
     temp2 = document.getElementsByClassName(temp1 + ' ' + temp4);
     for (i = 0; i < temp2.length; i++) {
         temp3 = temp2.item(i);
-        temp3.classList.remove("empty");
-        temp3.className += " orange";
-    }  
+    }
+    switch (slotNumber) {
+        case 1:
+            switch (position1) {
+                case 0:
+                    position1 = 1;
+                    temp3.classList.remove("empty");
+                    temp3.className += " orange";
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    position1 = 1;
+                    temp3.classList.remove("blue");
+                    temp3.className += " orange";
+                    break;
+                case 3:
+                    position1 = 1;
+                    temp3.classList.remove("red");
+                    temp3.className += " orange";
+                    break;
+                case 4:
+                    position1 = 1;
+                    temp3.classList.remove("green");
+                    temp3.className += " orange";
+                    break;
+                case 5:
+                    position1 = 1;
+                    temp3.classList.remove("violet");
+                    temp3.className += " orange";
+                    break;
+                case 6:
+                    position1 = 1;
+                    temp3.classList.remove("yellow");
+                    temp3.className += " orange";
+                    break;
+            }
+            if (position2 === 1) {
+                position2 = 0;
+                temp2 = document.getElementsByClassName(temp1 + ' box2');
+                for (i = 0; i < temp2.length; i++) {
+                    temp3 = temp2.item(i);
+                }
+                temp3.classList.remove("orange");
+                temp3.className += " empty";
+                break;
+            }
+            if (position3 === 1) {
+                position3 = 0;
+                temp2 = document.getElementsByClassName(temp1 + ' box3');
+                for (i = 0; i < temp2.length; i++) {
+                    temp3 = temp2.item(i);
+                }
+                temp3.classList.remove("orange");
+                temp3.className += " empty";
+                break;
+            }
+            if (position4 === 1) {
+                position4 = 0;
+                temp2 = document.getElementsByClassName(temp1 + ' box4');
+                for (i = 0; i < temp2.length; i++) {
+                    temp3 = temp2.item(i);
+                }
+                temp3.classList.remove("orange");
+                temp3.className += " empty";
+                break;
+            }
+            break;
+        case 2:
+            switch (position2) {
+                case 0:
+                    position2 = 1;
+                    temp3.classList.remove("empty");
+                    temp3.className += " orange";
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    position2 = 1;
+                    temp3.classList.remove("blue");
+                    temp3.className += " orange";
+                    break;
+                case 3:
+                    position2 = 1;
+                    temp3.classList.remove("red");
+                    temp3.className += " orange";
+                    break;
+                case 4:
+                    position2 = 1;
+                    temp3.classList.remove("green");
+                    temp3.className += " orange";
+                    break;
+                case 5:
+                    position2 = 1;
+                    temp3.classList.remove("violet");
+                    temp3.className += " orange";
+                    break;
+                case 6:
+                    position2 = 1;
+                    temp3.classList.remove("yellow");
+                    temp3.className += " orange";
+                    break;
+            }
+            if (position1 === 1) {
+                position1 = 0;
+                temp2 = document.getElementsByClassName(temp1 + ' box1');
+                for (i = 0; i < temp2.length; i++) {
+                    temp3 = temp2.item(i);
+                }
+                temp3.classList.remove("orange");
+                temp3.className += " empty";
+                break;
+            }
+            if (position3 === 1) {
+                position3 = 0;
+                temp2 = document.getElementsByClassName(temp1 + ' box3');
+                for (i = 0; i < temp2.length; i++) {
+                    temp3 = temp2.item(i);
+                }
+                temp3.classList.remove("orange");
+                temp3.className += " empty";
+                break;
+            }
+            if (position4 === 1) {
+                position4 = 0;
+                temp2 = document.getElementsByClassName(temp1 + ' box4');
+                for (i = 0; i < temp2.length; i++) {
+                    temp3 = temp2.item(i);
+                }
+                temp3.classList.remove("orange");
+                temp3.className += " empty";
+                break;
+            }
+            break;
+        case 3:
+            switch (position3) {
+                case 0:
+                    position3 = 1;
+                    temp3.classList.remove("empty");
+                    temp3.className += " orange";
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    position3 = 1;
+                    temp3.classList.remove("blue");
+                    temp3.className += " orange";
+                    break;
+                case 3:
+                    position3 = 1;
+                    temp3.classList.remove("red");
+                    temp3.className += " orange";
+                    break;
+                case 4:
+                    position3 = 1;
+                    temp3.classList.remove("green");
+                    temp3.className += " orange";
+                    break;
+                case 5:
+                    position3 = 1;
+                    temp3.classList.remove("violet");
+                    temp3.className += " orange";
+                    break;
+                case 6:
+                    position3 = 1;
+                    temp3.classList.remove("yellow");
+                    temp3.className += " orange";
+                    break;
+            }
+            if (position2 === 1) {
+                position2 = 0;
+                temp2 = document.getElementsByClassName(temp1 + ' box2');
+                for (i = 0; i < temp2.length; i++) {
+                    temp3 = temp2.item(i);
+                }
+                temp3.classList.remove("orange");
+                temp3.className += " empty";
+                break;
+            }
+            if (position1 === 1) {
+                position1 = 0;
+                temp2 = document.getElementsByClassName(temp1 + ' box1');
+                for (i = 0; i < temp2.length; i++) {
+                    temp3 = temp2.item(i);
+                }
+                temp3.classList.remove("orange");
+                temp3.className += " empty";
+                break;
+            }
+            if (position4 === 1) {
+                position4 = 0;
+                temp2 = document.getElementsByClassName(temp1 + ' box4');
+                for (i = 0; i < temp2.length; i++) {
+                    temp3 = temp2.item(i);
+                }
+                temp3.classList.remove("orange");
+                temp3.className += " empty";
+                break;
+            }
+            break;
+        case 4:
+            switch (position4) {
+                case 0:
+                    position4 = 1;
+                    temp3.classList.remove("empty");
+                    temp3.className += " orange";
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    position4 = 1;
+                    temp3.classList.remove("blue");
+                    temp3.className += " orange";
+                    break;
+                case 3:
+                    position4 = 1;
+                    temp3.classList.remove("red");
+                    temp3.className += " orange";
+                    break;
+                case 4:
+                    position4 = 1;
+                    temp3.classList.remove("green");
+                    temp3.className += " orange";
+                    break;
+                case 5:
+                    position4 = 1;
+                    temp3.classList.remove("violet");
+                    temp3.className += " orange";
+                    break;
+                case 6:
+                    position4 = 1;
+                    temp3.classList.remove("yellow");
+                    temp3.className += " orange";
+                    break;
+            }
+            if (position2 === 1) {
+                position2 = 0;
+                temp2 = document.getElementsByClassName(temp1 + ' box2');
+                for (i = 0; i < temp2.length; i++) {
+                    temp3 = temp2.item(i);
+                }
+                temp3.classList.remove("orange");
+                temp3.className += " empty";
+                break;
+            }
+            if (position3 === 1) {
+                position3 = 0;
+                temp2 = document.getElementsByClassName(temp1 + ' box3');
+                for (i = 0; i < temp2.length; i++) {
+                    temp3 = temp2.item(i);
+                }
+                temp3.classList.remove("orange");
+                temp3.className += " empty";
+                break;
+            }
+            if (position1 === 1) {
+                position1 = 0;
+                temp2 = document.getElementsByClassName(temp1 + ' box1');
+                for (i = 0; i < temp2.length; i++) {
+                    temp3 = temp2.item(i);
+                }
+                temp3.classList.remove("orange");
+                temp3.className += " empty";
+                break;
+            }
+            break;
+    }
+
+      
 }
