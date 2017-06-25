@@ -321,15 +321,13 @@ ul.navigation ul {
     transition:opacity 0.2s linear, visibility 0.2s linear;     
 }
  
-ul.navigation ul {
-}
- 
-
  
 ul.navigation ul li {
     clear:both;
     width:100%;
     border:0 none;
+    background-color:gray;
+    border: solid 1px #000000;
 }
  
 ul.navigation ul li a {
@@ -340,9 +338,7 @@ ul.navigation ul li a {
     border:0 none;
     clear:both;
     width:125px;
-    background-color:gray;
-    border: solid 1px #000000;
-    text-align:center;
+    text-align:center;    
 }
 
 ul.navigation ul li a img{
