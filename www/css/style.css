@@ -199,7 +199,94 @@ body{
     border:0px;
     display:block;
     float:left;
+}
+
+.emptyscore{
     background: url('../img/singleboxscore.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score00{
+    background: url('../img/00.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score01{
+    background: url('../img/01.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score02{
+    background: url('../img/02.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score03{
+    background: url('../img/03.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score04{
+    background: url('../img/04.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score10{
+    background: url('../img/10.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score11{
+    background: url('../img/11.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score12{
+    background: url('../img/12.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score13{
+    background: url('../img/13.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score20{
+    background: url('../img/20.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score21{
+    background: url('../img/21.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score22{
+    background: url('../img/22.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score30{
+    background: url('../img/30.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.score40{
+    background: url('../img/40.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }

@@ -1,4 +1,4 @@
-window.addEventListener("load", function () {
+﻿window.addEventListener("load", function () {
     buttonNewGame = document.getElementById("newgame");
     buttonNewGame.addEventListener("click", initGame);
     checkBtn = document.getElementById("checkbtn");
@@ -525,8 +525,12 @@ function makeRandomColors() {
         availableColors[tmp1] = availableColors[p];
         p = p-1;
     }
-    return(randomColorsBox);
+    random1 = randomColorsBox[0];
+    random2 = randomColorsBox[1];
+    random3 = randomColorsBox[2];
+    random4 = randomColorsBox[3];
 }
+
 
 function getTime() {
     var time, toParse;
@@ -618,9 +622,140 @@ function initGame() {
     checkDifficultyLevel();
 }
 
+function amIRight() {
+    var correct, semiCorrect;
+    var temp1, temp2;
+    temp1 = 'score' + (round - 1);
+    temp2 = document.getElementById(temp1);    
+    correct = 0;
+    semiCorrect = 0;
+
+
+    if (random1 === position1) {
+        correct = correct + 1;
+    }
+    else {
+        if (random1 === position2) semiCorrect = semiCorrect + 1;
+        if (random1 === position3) semiCorrect = semiCorrect + 1;
+        if (random1 === position4) semiCorrect = semiCorrect + 1;
+    }
+
+    if (random2 === position2) {
+        correct = correct + 1;
+    }
+    else {
+        if (random2 === position1) semiCorrect = semiCorrect + 1;
+        if (random2 === position3) semiCorrect = semiCorrect + 1;
+        if (random2 === position4) semiCorrect = semiCorrect + 1;
+    }
+    if (random3 === position3) {
+        correct = correct + 1;
+    }
+    else {
+        if (random3 === position1) semiCorrect = semiCorrect + 1;
+        if (random3 === position2) semiCorrect = semiCorrect + 1;
+        if (random3 === position4) semiCorrect = semiCorrect + 1;
+    }
+
+    if (random4 === position4) {
+        correct = correct + 1;
+    }
+    else {
+        if (random4 === position1) semiCorrect = semiCorrect + 1;
+        if (random4 === position2) semiCorrect = semiCorrect + 1;
+        if (random4 === position3) semiCorrect = semiCorrect + 1;
+    }
+    
+    switch (correct) {
+        case 0:
+            switch (semiCorrect) {
+                case 0:
+                    temp2.classList.remove("emptyscore");
+                    temp2.className += " score00";
+                    alert('Koniec rundy nr: ' + (round - 1) + '. Niestety, żadna kulka nie ma właściwego koloru i nie znajduje się na właściwym miejscu.');
+                    break;
+                case 1:
+                    temp2.classList.remove("emptyscore");
+                    temp2.className += " score01";
+                    alert('Koniec rundy nr: ' + (round - 1) + '. Niestety, żadna kulka nie znajduje się na właściwym miejscu, ale ' + semiCorrect + ' kulka ma właściwy kolor.');
+                    break;
+                case 2:
+                    temp2.classList.remove("emptyscore");
+                    temp2.className += " score02";
+                    alert('Koniec rundy nr: ' + (round - 1) + '. Niestety, żadna kulka nie znajduje się na właściwym miejscu, ale ' + semiCorrect + ' kulki mają właściwy kolor.');
+                    break;
+                case 3:
+                    temp2.classList.remove("emptyscore");
+                    temp2.className += " score03";
+                    alert('Koniec rundy nr: ' + (round - 1) + '. Niestety, żadna kulka nie znajduje się na właściwym miejscu, ale ' + semiCorrect + ' kulki mają właściwy kolor.');
+                    break;
+                case 4:
+                    temp2.classList.remove("emptyscore");
+                    temp2.className += " score04";
+                    alert('Koniec rundy nr: ' + (round - 1) + '. Niestety, żadna kulka nie znajduje się na właściwym miejscu, ale ' + semiCorrect + ' kulki mają właściwy kolor.');
+                    break;
+            }
+            break;
+        case 1:
+            switch (semiCorrect) {
+                case 0:
+                    temp2.classList.remove("emptyscore");
+                    temp2.className += " score10";
+                    alert('Koniec rundy nr: ' + (round - 1) + '. Nieźle, ' + correct + ' kulka znajduje się na swoim miejscu. Kolory pozostałych kulek nie są poprawne.');
+                    break;
+                case 1:
+                    temp2.classList.remove("emptyscore");
+                    temp2.className += " score11";
+                    alert('Koniec rundy nr: ' + (round - 1) + '. Nieźle, ' + correct + ' kulka znajduje się na swoim miejscu. Dodatkowo ' + semiCorrect + ' kulka ma właściwy kolor.');
+                    break;
+                case 2:
+                    temp2.classList.remove("emptyscore");
+                    temp2.className += " score12";
+                    alert('Koniec rundy nr: ' + (round - 1) + '. Nieźle, ' + correct + ' kulka znajduje się na swoim miejscu. Dodatkowo ' + semiCorrect + ' kulki mają właściwy kolor.');
+                    break;
+                case 3:
+                    temp2.classList.remove("emptyscore");
+                    temp2.className += " score13";
+                    alert('Koniec rundy nr: ' + (round - 1) + '. Nieźle, ' + correct + ' kulka znajduje się na swoim miejscu. Dodatkowo ' + semiCorrect + ' kulki mają właściwy kolor.');
+                    break;
+            }
+            break;
+        case 2:
+            switch (semiCorrect) {
+                case 0:
+                    temp2.classList.remove("emptyscore");
+                    temp2.className += " score20";
+                    alert('Koniec rundy nr: ' + (round - 1) + '. Nieźle, ' + correct + ' kulki znajdują się na swoim miejscu. Kolory pozostałych kulek nie są poprawne.');
+                    break;
+                case 1:
+                    temp2.classList.remove("emptyscore");
+                    temp2.className += " score21";
+                    alert('Koniec rundy nr: ' + (round - 1) + '. Nieźle, ' + correct + ' kulki znajdują się na swoim miejscu. Dodatkowo ' + semiCorrect + ' kulka ma właściwy kolor.');
+                    break;
+                case 2:
+                    temp2.classList.remove("emptyscore");
+                    temp2.className += " score22";
+                    alert('Koniec rundy nr: ' + (round - 1) + '. Nieźle, ' + correct + ' kulki znajdują się na swoim miejscu. Dodatkowo ' + semiCorrect + ' kulki mają właściwy kolor.');
+                    break;
+            }
+            break;
+        case 3:
+            temp2.classList.remove("emptyscore");
+            temp2.className += " score30";
+            alert('Koniec rundy nr: ' + (round - 1) + '. Już prawie! ' + correct + ' kulki znajdują się na swoim miejscu. Czwarta kulka jest złego koloru.');
+            break;
+        case 4:
+            temp2.classList.remove("emptyscore");
+            temp2.className += " score40";
+            alert('Koniec rundy nr: ' + (round - 1) + '. BRAWO! Wszystkie' + correct + ' kulki znajdują się na swoim miejscu. Sprawdź swój wynik.');
+            break;
+    }
+}
+
 function newRound() {
     clearTimeout(temporaryTime);
     round = round + 1;
+    amIRight();
     position1 = 0;
     position2 = 0;
     position3 = 0;
