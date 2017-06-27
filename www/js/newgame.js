@@ -621,6 +621,43 @@ function initGame() {
 function amIRight() {
     var correct, semiCorrect;
     var temp1, temp2;
+    if (position1 === 0) {
+        temp1 = 'imgrow' + (round - 1);
+        temp2 = document.getElementsByClassName(temp1 + ' box1');
+        for (i = 0; i < temp2.length; i++) {
+            temp1 = temp2.item(i);
+        }
+        temp1.classList.remove("empty");
+        temp1.className += " toolate";
+    }
+    if (position2 === 0) {
+        temp1 = 'imgrow' + (round - 1);
+        temp2 = document.getElementsByClassName(temp1 + ' box2');
+        for (i = 0; i < temp2.length; i++) {
+            temp1 = temp2.item(i);
+        }
+        temp1.classList.remove("empty");
+        temp1.className += " toolate";
+    }
+    if (position3 === 0) {
+        temp1 = 'imgrow' + (round - 1);
+        temp2 = document.getElementsByClassName(temp1 + ' box3');
+        for (i = 0; i < temp2.length; i++) {
+            temp1 = temp2.item(i);
+        }
+        temp1.classList.remove("empty");
+        temp1.className += " toolate";
+    }
+    if (position4 === 0) {
+        temp1 = 'imgrow' + (round - 1);
+        temp2 = document.getElementsByClassName(temp1 + ' box4');
+        for (i = 0; i < temp2.length; i++) {
+            temp1 = temp2.item(i);
+        }
+        temp1.classList.remove("empty");
+        temp1.className += " toolate";
+    }
+
     temp1 = 'score' + (round - 1);
     temp2 = document.getElementById(temp1);    
     correct = 0;

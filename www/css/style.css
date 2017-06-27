@@ -1,10 +1,10 @@
-body{
+﻿body{
     margin:0px !important;
     padding:0px !important;
     
 }
 
-#menu, #rules{
+#menu{
     background: url('../img/Splash.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
