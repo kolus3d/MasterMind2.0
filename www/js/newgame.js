@@ -449,6 +449,24 @@ function randomColor(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function makeRandomColors() {
+    var availableColors = [1, 2, 3, 4, 5, 6];
+    var randomColorsBox = [0, 0, 0, 0];
+    var i, p, tmp1, tmp2;
+    p = sessionStorage.getItem('numbercolors') - 1;
+    for (i = 0; i < 4; i++) {
+        tmp1 = randomColor(0, p);
+        randomColorsBox[i] = availableColors[tmp1];
+        tmp2 = availableColors[tmp1];
+        availableColors[tmp1] = availableColors[p];
+        p = p - 1;
+    }
+    random1 = randomColorsBox[0];
+    random2 = randomColorsBox[1];
+    random3 = randomColorsBox[2];
+    random4 = randomColorsBox[3];
+}
+
 
 function screenSize() {
     var i;
@@ -476,9 +494,6 @@ function screenSize() {
     element = document.getElementById('checkbuttonbox');
     element.style.width = window.innerWidth * 0.5 + 'px';
     element.style.height = window.innerHeight * 0.1 + 'px';
-    //element = document.getElementById('checkbtn');
-    //element.style.width = window.innerWidth * 0.3 + 'px';
-    //element.style.height = window.innerHeight * 0.05 + 'px';
     
     el = document.getElementsByClassName("popupmenua");
     for (i = 0; i < el.length; i++) {
@@ -510,25 +525,6 @@ function screenSize() {
                     break;
             }
         }
-}
-
-
-function makeRandomColors() {
-    var availableColors = [1, 2, 3, 4, 5, 6];
-    var randomColorsBox = [0, 0, 0, 0];
-    var i, p, tmp1, tmp2;
-        p = sessionStorage.getItem('numbercolors') - 1;
-    for (i = 0; i < 4; i++){
-        tmp1 = randomColor(0, p);
-        randomColorsBox[i] = availableColors[tmp1];
-        tmp2 = availableColors[tmp1];
-        availableColors[tmp1] = availableColors[p];
-        p = p-1;
-    }
-    random1 = randomColorsBox[0];
-    random2 = randomColorsBox[1];
-    random3 = randomColorsBox[2];
-    random4 = randomColorsBox[3];
 }
 
 
@@ -747,14 +743,15 @@ function amIRight() {
         case 4:
             temp2.classList.remove("emptyscore");
             temp2.className += " score40";
-            alert('Koniec rundy nr: ' + (round - 1) + '. BRAWO! Wszystkie' + correct + ' kulki znajdują się na swoim miejscu. Sprawdź swój wynik.');
+            clearTimeout(temporaryTime);
+            alert('Koniec rundy nr: ' + (round - 1) + '. BRAWO! Wszystkie ' + correct + ' kulki znajdują się na swoim miejscu. Sprawdź swój wynik.');
             window.location.href = "#menu";
             location.reload();
             break;
     }
     if (round === 9) {
         if (correct < 4) {
-            alert('Niestety, to już koniec! Nie udało Ci się odgadnąć prawidłowego układu kulek. Prawidłowy układ to: ' + colorName[random1-1] + ', ' + colorName[random2-1] + ', ' + colorName[random3-1] + ', ' + colorName[random4-1] + '. ' + 'Spróbuj jeszcze raz.');
+            alert('Niestety, to już koniec! Nie udało Ci się odgadnąć prawidłowego układu kulek: ' + colorName[random1-1] + ', ' + colorName[random2-1] + ', ' + colorName[random3-1] + ', ' + colorName[random4-1] + '. ' + 'Spróbuj jeszcze raz.');
             window.location.href = "#menu";
             location.reload();
         }
