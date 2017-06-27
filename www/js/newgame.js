@@ -629,7 +629,7 @@ function amIRight() {
     temp2 = document.getElementById(temp1);    
     correct = 0;
     semiCorrect = 0;
-
+    var colorName = ["Pomarańczowy", "Niebieski", "Czerwony", "Zielony", "Fioletowy", "Żółty"];
 
     if (random1 === position1) {
         correct = correct + 1;
@@ -748,8 +748,18 @@ function amIRight() {
             temp2.classList.remove("emptyscore");
             temp2.className += " score40";
             alert('Koniec rundy nr: ' + (round - 1) + '. BRAWO! Wszystkie' + correct + ' kulki znajdują się na swoim miejscu. Sprawdź swój wynik.');
+            window.location.href = "#menu";
+            location.reload();
             break;
     }
+    if (round === 9) {
+        if (correct < 4) {
+            alert('Niestety, to już koniec! Nie udało Ci się odgadnąć prawidłowego układu kulek. Prawidłowy układ to: ' + colorName[random1-1] + ', ' + colorName[random2-1] + ', ' + colorName[random3-1] + ', ' + colorName[random4-1] + '. ' + 'Spróbuj jeszcze raz.');
+            window.location.href = "#menu";
+            location.reload();
+        }
+    }
+    else { };
 }
 
 function newRound() {
