@@ -419,7 +419,6 @@ ul.navigation ul {
  
  
 ul.navigation ul li {
-    /*clear:both;*/
     border:0 none;
     width:50px;
     height:50px;
@@ -431,7 +430,6 @@ ul.navigation ul li a {
     text-decoration:none;
     display:inline-block;
     border:0 none;
-    /*clear:both;*/
     width:50px;
     height:50px;
     text-align:center;    

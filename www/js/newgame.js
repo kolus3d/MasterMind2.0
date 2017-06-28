@@ -662,7 +662,7 @@ function amIRight() {
     temp2 = document.getElementById(temp1);    
     correct = 0;
     semiCorrect = 0;
-    var colorName = ["Pomarańczowy", "Niebieski", "Czerwony", "Zielony", "Fioletowy", "Żółty"];
+    var colorName = ["POMARAŃCZOWY", "NIEBIESKI", "CZERWONY", "ZIELONY", "FIOLETOWY", "ŻÓŁTY"];
 
     if (random1 === position1) {
         correct = correct + 1;
