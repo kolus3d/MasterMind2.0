@@ -1,37 +1,38 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title></title>
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="cordova.js"></script>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script src="js/config.js"></script>
+    <script src="js/bestscores.js"></script>
     <script src="js/newgame.js"></script>
     <script src="js/options.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <!-- Main menu page-->
+    <!-- Menu główne-->
     <div data-role="page" id="menu">
         <div class="buttonscontainer">
             <a href="#newgamepage" data-transition="pop" id="newgame" class="ui-btn ui-corner-all menubutton">Nowa Gra</a>
             <a href="#rules" data-transition="pop" class="ui-btn ui-corner-all menubutton">Zasady Gry</a>
-            <a href="#options" data-transition="pop" class="ui-btn ui-corner-all menubutton">Poziom trudności</a>
-            <a href="#bestresults" data-transition="pop" class="ui-btn ui-corner-all menubutton">Najlepsze Wyniki</a>
+            <a href="#options" data-transition="pop" class="ui-btn ui-corner-all menubutton">Poziom Trudności</a>
+            <a href="#bestresultsnormal" id="normalbtn1" data-transition="pop" class="ui-btn ui-corner-all menubutton">Najlepsze Wyniki</a>
         </div>
     </div>
-    <!-- Game page-->
+    <!-- Strona Nowa gra-->
     <div data-role="page" id="newgamepage">
 
         <div class="singlerow">
             <div id="timer"><h2 id="clock"></h2></div>
             <div id="checkbuttonbox">
-                <a id="checkbtn" href="#"><img src="../www/img/check.png" /></a>
+                <a id="checkbtn" href="#"><img id="checkbtnimg" src="../www/img/check.png" /></a>
             </div>
         </div>
         <div class="singlerow">
@@ -618,11 +619,11 @@
             <div id="score1" class="singleboxscore emptyscore"></div>
             <!-- koniec 1-->
         </div>
-        
+
 
     </div>
 
-    <!-- Rules page-->
+    <!-- Zasady gry-->
     <div data-role="page" id="rules">
         <div data-role="header" class="header">
             <h1>Zasady gry</h1>
@@ -633,7 +634,7 @@
             <a href="#menu" data-transition="slide" class="ui-btn ui-icon-back ui-btn-icon-left ui-corner-all backbutton">MENU</a>
         </div>
     </div>
-    <!-- Options page-->
+    <!-- Poziom trudności-->
     <div data-role="page" id="options">
         <div data-role="header" class="header">
             <h1>Poziom trudności</h1>
@@ -646,20 +647,230 @@
             </div>
         </div>
         <div data-role="footer" class="footer">
-            <a href="#menu" data-transition="slide" class="ui-btn ui-icon-back ui-btn-icon-left ui-corner-all backbutton">MENU</a>
+            <a href="#menu" data-transition="slide" class="ui-btn ui-icon-back ui-btn-icon-left ui-corner-all backbutton">OK</a>
         </div>
     </div>
-    <!-- Best results page-->
-    <div data-role="page" id="bestresults">
+    <!-- Najlepsze wyniki-->
+    <div data-role="page" id="bestresultsnormal">
 
         <div data-role="header" class="header">
-            <h1>Najlepsze wyniki</h1>
+            <h1>Najlepsze wyniki - Poziom normalny</h1>
         </div>
         <div data-role="main" class="ui-content">
-
+            <table data-role="table" class="ui-responsive resultstable">
+                <thead>
+                    <tr>
+                        <th>Pozycja</th>
+                        <th>Gracz</th>
+                        <th>Punkty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td id="namen1"></td>
+                        <td id="scoren1"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td id="namen2"></td>
+                        <td id="scoren2"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td id="namen3"></td>
+                        <td id="scoren3"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td id="namen4"></td>
+                        <td id="scoren4"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td id="namen5"></td>
+                        <td id="scoren5"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td id="namen6"></td>
+                        <td id="scoren6"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td id="namen7"></td>
+                        <td id="scoren7"></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td id="namen8"></td>
+                        <td id="scoren8"></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td id="namen9"></td>
+                        <td id="scoren9"></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td id="namen10"></td>
+                        <td id="scoren10"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div data-role="footer" class="footer">
-            <a href="#menu" data-transition="slide" class="ui-btn ui-icon-back ui-btn-icon-left ui-corner-all backbutton">MENU</a>
+            <a href="#bestresultseasy" id="easybtn1" data-transition="pop" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-corner-all backbutton">Poziom łatwy</a>
+            <a href="#menu" data-transition="pop" class="ui-btn ui-icon-back ui-btn-icon-left ui-corner-all backbutton">MENU</a>
+            <a href="#bestresultshard" id="hardbtn1" data-transition="pop" class="ui-btn ui-icon-arrow-r ui-btn-icon-right ui-corner-all backbutton">Poziom trudny</a>
+        </div>
+    </div>
+    <div data-role="page" id="bestresultseasy">
+
+        <div data-role="header" class="header">
+            <h1>Najlepsze wyniki - Poziom łatwy</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <table data-role="table" class="ui-responsive resultstable">
+                <thead>
+                    <tr>
+                        <th>Pozycja</th>
+                        <th>Gracz</th>
+                        <th>Punkty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td id="namee1"></td>
+                        <td id="scoree1"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td id="namee2"></td>
+                        <td id="scoree2"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td id="namee3"></td>
+                        <td id="scoree3"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td id="namee4"></td>
+                        <td id="scoree4"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td id="namee5"></td>
+                        <td id="scoree5"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td id="namee6"></td>
+                        <td id="scoree6"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td id="namee7"></td>
+                        <td id="scoree7"></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td id="namee8"></td>
+                        <td id="scoree8"></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td id="namee9"></td>
+                        <td id="scoree9"></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td id="namee10"></td>
+                        <td id="scoree10"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div data-role="footer" class="footer">
+            <a href="#bestresultsnormal" id="normalbtn2" data-transition="pop" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-corner-all backbutton">Poziom normalny</a>
+            <a href="#menu" data-transition="pop" class="ui-btn ui-icon-back ui-btn-icon-left ui-corner-all backbutton">MENU</a>
+            <a href="#bestresultshard" id="hardbtn2" data-transition="pop" class="ui-btn ui-icon-arrow-r ui-btn-icon-right ui-corner-all backbutton">Poziom trudny</a>
+        </div>
+    </div>
+    <div data-role="page" id="bestresultshard">
+
+        <div data-role="header" class="header">
+            <h1>Najlepsze wyniki - Poziom trudny</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <table data-role="table" class="ui-responsive resultstable">
+                <thead>
+                    <tr>
+                        <th>Pozycja</th>
+                        <th>Gracz</th>
+                        <th>Punkty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td id="nameh1"></td>
+                        <td id="scoreh1"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td id="nameh2"></td>
+                        <td id="scoreh2"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td id="nameh3"></td>
+                        <td id="scoreh3"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td id="nameh4"></td>
+                        <td id="scoreh4"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td id="nameh5"></td>
+                        <td id="scoreh5"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td id="nameh6"></td>
+                        <td id="scoreh6"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td id="nameh7"></td>
+                        <td id="scoreh7"></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td id="nameh8"></td>
+                        <td id="scoreh8"></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td id="nameh9"></td>
+                        <td id="scoreh9"></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td id="nameh10"></td>
+                        <td id="scoreh10"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div data-role="footer" class="footer">
+            <a href="#bestresultseasy" id="easybtn2" data-transition="pop" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-corner-all backbutton">Poziom łatwy</a>
+            <a href="#menu" data-transition="pop" class="ui-btn ui-icon-back ui-btn-icon-left ui-corner-all backbutton">MENU</a>
+            <a href="#bestresultsnormal" id="normalbtn3" data-transition="pop" class="ui-btn ui-icon-arrow-r ui-btn-icon-right ui-corner-all backbutton">Poziom normalny</a>
         </div>
     </div>
 </body>

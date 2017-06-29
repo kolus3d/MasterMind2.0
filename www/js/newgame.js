@@ -494,6 +494,12 @@ function screenSize() {
     element = document.getElementById('checkbuttonbox');
     element.style.width = window.innerWidth * 0.5 + 'px';
     element.style.height = window.innerHeight * 0.1 + 'px';
+    element = document.getElementById('checkbtn');
+    element.style.width = window.innerWidth * 0.5 + 'px';
+    element.style.height = window.innerHeight * 0.1 + 'px';
+    element = document.getElementById('checkbtnimg');
+    element.style.width = window.innerWidth * 0.35 -40 + 'px';
+    element.style.height = window.innerHeight * 0.1 -20+ 'px';
     
     el = document.getElementsByClassName("popupmenua");
     for (i = 0; i < el.length; i++) {
@@ -2603,9 +2609,9 @@ function pickYellow(slotNumber) {
             break;
     }
 
-    console.log('Y poz1: ' + position1);
-    console.log('Y poz2: ' + position2);
-    console.log('Y poz3: ' + position3);
-    console.log('Y poz4: ' + position4);
+    //console.log('Y poz1: ' + position1);
+    //console.log('Y poz2: ' + position2);
+    //console.log('Y poz3: ' + position3);
+    //console.log('Y poz4: ' + position4);
 
 }

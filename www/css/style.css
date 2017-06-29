@@ -16,7 +16,7 @@
     background-repeat: no-repeat;
 }
 
-#bestresults{
+#bestresultsnormal, #bestresultseasy, #bestresultshard{
     background: url('../img/bestbg.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -48,6 +48,7 @@
     left:0px;
     border:0px;
     opacity:0.8;
+    text-align:center;
     background-color: #69C2FD !important;
     color:#ffffff !important;
     font-family:'Calibri';
@@ -104,16 +105,22 @@
 
 
 .backbutton{
-    width:50px;
-    display: block !important;
-    margin-left: auto;
-    margin-right: auto;
+    
+    display: inline-block !important;
+    margin:auto;
     background-color: #1B3C5B !important;
     color:#ffffff !important;
     font-family:'Calibri';
     font-weight:normal !important;
     }
 
+/*najlepsze wyniki/ */
+.resultstable{
+    color:white;
+    font-family:'Calibri';
+    text-align:center;
+    border:1px solid #69C2FD;    
+}
 
 /*new game*/ 
 
@@ -317,9 +324,16 @@
 #checkbtn{
     position:absolute;
     margin:0px;
-    margin-top:25px;
     padding:0px;
     width:50%;
+    height:100%;
+    text-align:center;
+}
+
+#checkbtn img{
+    position:relative;
+    margin:10px 20px;
+    padding:0px;
     text-align:center;
 }
 
